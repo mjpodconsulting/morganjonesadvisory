@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Morgan Jones Consulting — Podcast & Creator Portfolio Strategy</title>
+<meta name="description" content="Morgan Jones helps podcast networks, platforms, and creators make high-stakes content decisions — what to greenlight, fix, stop, and how to launch. 15+ years at Wondery, Amazon Music, and Audible.">
+<meta name="keywords" content="podcast consultant, podcast strategy, content strategy, podcast network advisor, creator strategy, slate strategy, podcast development, Morgan Jones">
+<meta name="author" content="Morgan Jones">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.morganjonesadvisory.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.morganjonesadvisory.com/">
+<meta property="og:title" content="Morgan Jones Consulting — Podcast & Creator Portfolio Strategy">
+<meta property="og:description" content="Senior strategic advisory for podcast networks, platforms, and creators. 15+ years at Wondery, Amazon Music, and Audible. 2× Podcast of the Year.">
+<meta property="og:image" content="https://www.morganjonesadvisory.com/og-image.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Morgan Jones Consulting — Podcast & Creator Portfolio Strategy">
+<meta name="twitter:description" content="Senior strategic advisory for podcast networks, platforms, and creators. 15+ years at Wondery, Amazon Music, and Audible.">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Morgan Jones Consulting",
+  "description": "Podcast and creator portfolio strategy — helping networks, platforms, and creators make high-stakes content decisions.",
+  "url": "https://www.morganjonesadvisory.com",
+  "telephone": "+19179916908",
+  "email": "morganjones25@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "San Francisco", "addressRegion": "CA", "addressCountry": "US" },
+  "founder": { "@type": "Person", "name": "Morgan Jones" },
+  "areaServed": "US",
+  "serviceType": ["Podcast Strategy", "Content Development", "Creator Advisory", "Slate Strategy"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────
+   RESET & TOKENS
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0D0D0D;
+  --bg-card:   #131313;
+  --bg-raised: #181818;
+  --border:    rgba(255,255,255,0.07);
+  --border-md: rgba(255,255,255,0.13);
+  --white:     #F2F0EC;
+  --off:       #78726A;
+  --off2:      #A09890;
+  --accent:    #E8D5A3;
+  --accent2:   #C4A96B;
+  --green:     #6DBF8A;
+  --red:       #C94B3A;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --max:        1300px;
+  --pad:        52px;
+  --pad-sm:     28px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom cursor — desktop only */
+@media (hover: hover) {
+  body { cursor: none; }
+  .cur, .cur-ring {
+    position: fixed; border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+  }
+  .cur { width:6px; height:6px; background:var(--accent); }
+  .cur-ring {
+    width:28px; height:28px;
+    border: 1px solid rgba(232,213,163,0.35);
+    z-index: 9998;
+  }
+}
+
+/* Grain */
+body::after {
+  content:''; position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:200; opacity:0.5;
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT UTILS
+───────────────────────────────────────── */
+.wrap { max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+/* ─────────────────────────────────────────
+   PAGES (SPA routing)
+───────────────────────────────────────── */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+.nav {
+  position: sticky; top:0; z-index:150;
+  background: rgba(13,13,13,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width:var(--max); margin:0 auto; padding:0 var(--pad);
+  display:flex; align-items:center; justify-content:space-between;
+  height: 68px;
+}
+
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size:16px; font-weight:400;
+  color:var(--white); text-decoration:none;
+  letter-spacing:0.01em; white-space:nowrap;
+}
+.nav-logo em { font-style:italic; color:var(--accent2); }
+
+.nav-links {
+  display:flex; gap:32px; list-style:none;
+}
+.nav-links a {
+  font-size:11px; font-weight:400;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--off); text-decoration:none;
+  transition:color 0.2s; cursor:pointer;
+  border:none; background:none; padding:0;
+  font-family:var(--font-sans);
+}
+.nav-links a:hover, .nav-links a.active { color:var(--white); }
+.nav-links a.active { color:var(--accent); }
+
+.nav-cta {
+  font-size:10px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--bg); background:var(--accent);
+  padding:10px 22px; text-decoration:none;
+  border:none; cursor:pointer; font-family:var(--font-sans);
+  transition:background 0.2s; white-space:nowrap;
+}
+.nav-cta:hover { background:var(--white); }
+
+/* Mobile nav */
+.nav-burger {
+  display:none;
+  background:none; border:none; padding:8px;
+  cursor:pointer; flex-direction:column;
+  gap:5px; align-items:flex-end;
+}
+.nav-burger span {
+  display:block; height:1px; background:var(--white);
+  transition:width 0.2s;
+}
+.nav-burger span:nth-child(1) { width:24px; }
+.nav-burger span:nth-child(2) { width:16px; }
+.nav-burger span:nth-child(3) { width:20px; }
+.nav-burger.open span:nth-child(1) { width:24px; transform:rotate(45deg) translate(4px, 4px); }
+.nav-burger.open span:nth-child(2) { opacity:0; }
+.nav-burger.open span:nth-child(3) { width:24px; transform:rotate(-45deg) translate(4px,-4px); }
+
+.nav-mobile {
+  display:none; flex-direction:column;
+  background:var(--bg-card);
+  border-bottom:1px solid var(--border);
+  padding:24px var(--pad-sm);
+  gap:0;
+}
+.nav-mobile.open { display:flex; }
+.nav-mobile a {
+  font-size:13px; font-weight:400;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--off2); text-decoration:none;
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+  cursor:pointer; transition:color 0.2s;
+}
+.nav-mobile a:hover, .nav-mobile a.active { color:var(--accent); }
+.nav-mobile .nav-mobile-cta {
+  margin-top:20px; text-align:center;
+  background:var(--accent); color:var(--bg);
+  padding:14px; font-size:11px;
+  letter-spacing:0.14em; text-transform:uppercase;
+  font-weight:500; border:none;
+}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes up {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fade {
+  from { opacity:0; } to { opacity:1; }
+}
+
+.anim { opacity:0; }
+.anim.in { animation: up 0.65s ease forwards; }
+.anim-d1.in { animation-delay:0.1s; }
+.anim-d2.in { animation-delay:0.2s; }
+.anim-d3.in { animation-delay:0.3s; }
+.anim-d4.in { animation-delay:0.45s; }
+.anim-d5.in { animation-delay:0.6s; }
+/* Safari: ensure content is never permanently hidden */
+.no-js .anim, .anim.in { opacity:1; }
+
+/* ─────────────────────────────────────────
+   SHARED TYPOGRAPHY
+───────────────────────────────────────── */
+.eyebrow {
+  font-size:10px; font-weight:500;
+  letter-spacing:0.28em; text-transform:uppercase;
+  color:var(--accent2);
+  display:flex; align-items:center; gap:12px;
+}
+.eyebrow::before {
+  content:''; display:block;
+  width:28px; height:1px; background:var(--accent2);
+  flex-shrink:0;
+}
+
+.section-label {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.3em; text-transform:uppercase;
+  color:var(--accent2); margin-bottom:20px;
+}
+
+h1, h2, h3 { font-family:var(--font-serif); }
+
+/* ─────────────────────────────────────────
+   ══ PAGE: HOME ══
+───────────────────────────────────────── */
+
+/* Hero */
+.home-hero {
+  padding: 88px 0 72px;
+  border-bottom:1px solid var(--border);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1fr 360px;
+  align-items:end;
+  gap:40px;
+}
+
+.hero-title {
+  font-size: clamp(56px, 6.8vw, 92px);
+  font-weight:900;
+  line-height:0.93;
+  letter-spacing:-0.025em;
+  margin-top:24px;
+}
+.hero-title .it { font-style:italic; font-weight:400; color:var(--accent); }
+.hero-title .ghost {
+  -webkit-text-stroke: 1.5px rgba(242,240,236,0.3);
+  color:transparent;
+}
+
+.hero-right p {
+  font-size:14px; font-weight:300;
+  color:var(--off2); line-height:1.8;
+  margin-bottom:28px;
+}
+
+.hero-right-actions {
+  display:flex; gap:14px; flex-wrap:wrap;
+}
+
+.btn-primary {
+  font-size:11px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase;
+  background:var(--accent); color:var(--bg);
+  padding:13px 28px; border:none;
+  cursor:pointer; text-decoration:none;
+  display:inline-block; transition:background 0.2s;
+  font-family:var(--font-sans);
+}
+.btn-primary:hover { background:var(--white); }
+
+.btn-secondary {
+  font-size:11px; font-weight:500;
+  letter-spacing:0.14em; text-transform:uppercase;
+  background:transparent; color:var(--off2);
+  padding:13px 28px;
+  border:1px solid var(--border-md);
+  cursor:pointer; text-decoration:none;
+  display:inline-block; transition:color 0.2s, border-color 0.2s;
+  font-family:var(--font-sans);
+}
+.btn-secondary:hover { color:var(--white); border-color:var(--border-md); }
+
+/* Logos strip */
+.logos-strip {
+  padding:40px 0;
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:0;
+}
+.logos-label {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.25em; text-transform:uppercase;
+  color:var(--off); white-space:nowrap;
+  padding-right:40px;
+  border-right:1px solid var(--border);
+  flex-shrink:0;
+}
+.logos-list {
+  display:flex; align-items:center;
+  gap:40px; padding-left:40px;
+  flex-wrap:wrap;
+}
+.logo-item {
+  font-family:var(--font-serif);
+  font-size:14px; font-weight:400;
+  color:var(--off); letter-spacing:0.05em;
+  opacity:0.7; transition:opacity 0.2s;
+}
+.logo-item:hover { opacity:1; }
+.logo-item em { font-style:italic; }
+
+/* Home intro section */
+.home-intro {
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+
+.intro-left h2 {
+  font-size:clamp(30px, 3.5vw, 44px);
+  font-weight:400; font-style:italic;
+  line-height:1.15; color:var(--white);
+  margin-top:16px; margin-bottom:28px;
+}
+.intro-left p {
+  font-size:14px; font-weight:300;
+  color:var(--off2); line-height:1.85;
+  margin-bottom:16px;
+}
+
+.intro-right { padding-top:8px; }
+
+.credential-list { list-style:none; }
+.credential-list li {
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  display:flex; gap:16px; align-items:flex-start;
+}
+.cred-num {
+  font-family:var(--font-serif);
+  font-size:13px; font-weight:400; font-style:italic;
+  color:var(--accent2); flex-shrink:0;
+  width:24px;
+}
+.cred-text {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.6;
+}
+.cred-text strong { font-weight:500; color:var(--white); }
+
+/* Home services grid */
+.home-services {
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.services-header {
+  display:flex; justify-content:space-between;
+  align-items:flex-end; margin-bottom:56px;
+}
+.services-header h2 {
+  font-size:clamp(32px, 3.5vw, 48px);
+  font-weight:900; line-height:1;
+  margin-top:14px;
+}
+.services-header h2 em { font-style:italic; font-weight:400; color:var(--accent); }
+
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border:1px solid var(--border);
+}
+
+.service-card {
+  padding:36px 32px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  transition:background 0.2s;
+}
+.service-card:hover { background:var(--bg-raised); }
+.service-card:nth-child(3n) { border-right:none; }
+.service-card:nth-last-child(-n+3) { border-bottom:none; }
+
+.service-num {
+  font-family:var(--font-serif);
+  font-size:11px; font-style:italic;
+  color:var(--accent2); margin-bottom:20px;
+}
+.service-card h3 {
+  font-size:17px; font-weight:700;
+  line-height:1.2; margin-bottom:14px;
+  color:var(--white);
+}
+.service-card p {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.7;
+  margin-bottom:16px;
+}
+.service-tag {
+  display:inline-block;
+  font-size:9px; font-weight:500;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--off); border:1px solid var(--border);
+  padding:4px 10px;
+}
+
+/* Home awards */
+.home-awards {
+  padding:72px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.awards-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0; margin-top:44px;
+  border:1px solid var(--border);
+}
+
+.award-item {
+  padding:32px 28px;
+  border-right:1px solid var(--border);
+}
+.award-item:last-child { border-right:none; }
+
+.award-show {
+  font-family:var(--font-serif);
+  font-size:15px; font-style:italic;
+  color:var(--accent); margin-bottom:8px;
+}
+.award-title {
+  font-size:12px; font-weight:500;
+  color:var(--white); margin-bottom:4px;
+  line-height:1.4;
+}
+.award-org {
+  font-size:11px; font-weight:300;
+  color:var(--off);
+}
+
+/* Home CTA band */
+.home-cta-band {
+  padding:80px 0;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center; gap:40px;
+}
+.home-cta-band h2 {
+  font-size:clamp(30px, 3.5vw, 46px);
+  font-weight:400; font-style:italic;
+  line-height:1.15; color:var(--white);
+}
+.home-cta-band h2 strong {
+  font-style:normal; font-weight:900;
+  display:block;
+}
+
+
+/* ─────────────────────────────────────────
+   ══ PAGE: SERVICES ══
+───────────────────────────────────────── */
+.services-hero {
+  padding:80px 0 64px;
+  border-bottom:1px solid var(--border);
+}
+
+.services-hero h1 {
+  font-size:clamp(52px, 6vw, 80px);
+  font-weight:900; line-height:0.95;
+  letter-spacing:-0.025em; margin-top:24px;
+}
+.services-hero h1 em { font-style:italic; font-weight:400; color:var(--accent); }
+
+.services-hero-sub {
+  margin-top:28px;
+  font-size:15px; font-weight:300;
+  color:var(--off2); line-height:1.8;
+  max-width:580px;
+}
+
+.services-full {
+  padding:64px 0;
+}
+
+.service-full-item {
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:0;
+  border-bottom:1px solid var(--border);
+  padding:56px 0;
+}
+.service-full-item:first-child { padding-top:0; }
+
+.sfi-left { padding-right:48px; }
+
+.sfi-num {
+  font-family:var(--font-serif);
+  font-size:48px; font-weight:900;
+  line-height:1;
+  -webkit-text-stroke:1px rgba(232,213,163,0.2);
+  color:transparent; margin-bottom:20px;
+}
+
+.sfi-left h3 {
+  font-size:22px; font-weight:700;
+  line-height:1.2; margin-bottom:12px;
+}
+.sfi-tag {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--off); border:1px solid var(--border);
+  padding:4px 10px; display:inline-block;
+}
+
+.sfi-right p {
+  font-size:14px; font-weight:300;
+  color:var(--off2); line-height:1.85;
+  margin-bottom:24px; max-width:600px;
+}
+.sfi-right ul {
+  list-style:none;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:8px 24px;
+}
+.sfi-right ul li {
+  font-size:13px; font-weight:300;
+  color:var(--off2); padding-left:16px;
+  position:relative; line-height:1.5;
+}
+.sfi-right ul li::before {
+  content:'—'; position:absolute; left:0;
+  color:var(--accent2); font-size:11px;
+}
+
+.best-for {
+  margin-top:24px; padding:20px 24px;
+  border:1px solid var(--border);
+  display:inline-block; max-width:600px;
+}
+.best-for-label {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--accent2); margin-bottom:6px;
+}
+.best-for p {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.6;
+  margin:0 !important;
+}
+
+/* How I work / Out of scope */
+.how-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0; border:1px solid var(--border);
+  margin-top:56px;
+}
+.how-col {
+  padding:40px 36px;
+  border-right:1px solid var(--border);
+}
+.how-col:last-child { border-right:none; }
+.how-col h3 {
+  font-size:18px; font-weight:400;
+  font-style:italic; margin-bottom:24px;
+}
+.how-col ul { list-style:none; }
+.how-col ul li {
+  font-size:13px; font-weight:300;
+  color:var(--off2); padding:11px 0;
+  border-bottom:1px solid var(--border);
+  padding-left:18px; position:relative;
+}
+.how-col ul li::before {
+  content:'→'; position:absolute; left:0;
+  color:var(--accent2); font-size:11px;
+}
+.how-col.no ul li::before { content:'×'; color:var(--red); }
+
+
+/* ─────────────────────────────────────────
+   ══ PAGE: ABOUT ══
+───────────────────────────────────────── */
+.about-hero {
+  padding:80px 0 64px;
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:60px; align-items:end;
+}
+
+.about-hero h1 {
+  font-size:clamp(50px, 6vw, 76px);
+  font-weight:900; line-height:0.95;
+  letter-spacing:-0.025em; margin-top:22px;
+}
+.about-hero h1 em { font-style:italic; font-weight:400; color:var(--accent); }
+
+.about-hero-right p {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.8;
+}
+
+.about-body {
+  padding:64px 0;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:80px; align-items:start;
+  border-bottom:1px solid var(--border);
+}
+
+.about-main p {
+  font-size:15px; font-weight:300;
+  color:var(--off2); line-height:1.9;
+  margin-bottom:22px;
+}
+.about-main p strong { color:var(--white); font-weight:500; }
+
+.about-main blockquote {
+  border-left:2px solid var(--accent2);
+  padding:4px 0 4px 24px; margin:36px 0;
+}
+.about-main blockquote p {
+  font-family:var(--font-serif);
+  font-style:italic; font-size:20px;
+  font-weight:400; color:var(--white);
+  line-height:1.5; margin:0;
+}
+
+.about-sidebar { position:sticky; top:100px; }
+
+.sidebar-box {
+  border:1px solid var(--border);
+  padding:28px; margin-bottom:20px;
+}
+.sidebar-box-label {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.25em; text-transform:uppercase;
+  color:var(--accent2); margin-bottom:18px;
+}
+.sidebar-box ul { list-style:none; }
+.sidebar-box ul li {
+  font-size:12px; font-weight:300;
+  color:var(--off2); padding:9px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.4;
+}
+.sidebar-box ul li strong { color:var(--white); font-weight:500; }
+.sidebar-box ul li:last-child { border-bottom:none; }
+
+.timeline {
+  padding:64px 0;
+  border-bottom:1px solid var(--border);
+}
+.timeline h2 {
+  font-size:clamp(28px,3vw,40px);
+  font-weight:900; margin-bottom:48px;
+}
+.timeline h2 em { font-style:italic; font-weight:400; color:var(--accent); }
+
+.timeline-list { list-style:none; }
+.timeline-item {
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:32px;
+  padding:36px 0;
+  border-bottom:1px solid var(--border);
+}
+.tl-dates {
+  font-size:11px; font-weight:300;
+  color:var(--off); letter-spacing:0.05em;
+  padding-top:4px;
+}
+.tl-company {
+  font-family:var(--font-serif);
+  font-size:13px; font-style:italic;
+  color:var(--accent2); margin-bottom:4px;
+}
+.tl-role {
+  font-size:16px; font-weight:700;
+  color:var(--white); margin-bottom:12px;
+}
+.tl-desc {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.75;
+}
+
+/* Peer quotes */
+.quotes-section {
+  padding:64px 0;
+}
+.quotes-section h2 {
+  font-size:clamp(28px,3vw,38px);
+  font-weight:400; font-style:italic;
+  margin-bottom:44px; color:var(--white);
+}
+.quotes-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px; background:var(--border);
+}
+.quote-card {
+  background:var(--bg-card);
+  padding:32px 28px;
+}
+.quote-text {
+  font-size:14px; font-weight:300;
+  color:var(--off2); line-height:1.75;
+  font-style:italic; margin-bottom:20px;
+}
+.quote-text::before { content:'"'; color:var(--accent2); font-family:var(--font-serif); font-size:20px; }
+.quote-attr {
+  font-size:10px; font-weight:500;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--off);
+}
+
+
+/* ─────────────────────────────────────────
+   ══ PAGE: CONTACT ══
+───────────────────────────────────────── */
+.contact-hero {
+  padding:72px 0 56px;
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:1fr 340px;
+  align-items:end; gap:40px;
+}
+
+.contact-hero h1 {
+  font-size:clamp(54px, 6.5vw, 88px);
+  font-weight:900; line-height:0.94;
+  letter-spacing:-0.025em; margin-top:22px;
+}
+.contact-hero h1 .it { font-style:italic; font-weight:400; color:var(--accent); }
+.contact-hero h1 .ghost {
+  -webkit-text-stroke:1.5px rgba(242,240,236,0.3);
+  color:transparent;
+}
+.contact-hero-right p {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.75;
+}
+
+.contact-body {
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:0;
+}
+
+/* Sidebar */
+.contact-sidebar {
+  border-right:1px solid var(--border);
+  padding:56px 44px 56px 0;
+}
+.cs-block { margin-bottom:48px; }
+.cs-list { list-style:none; }
+.cs-list li {
+  padding:12px 0; border-bottom:1px solid var(--border);
+  font-size:13px; font-weight:300; color:var(--off2);
+  transition:color 0.18s; cursor:default;
+}
+.cs-list li:hover { color:var(--white); }
+
+.stat-stack { display:flex; flex-direction:column; gap:24px; }
+.s-num {
+  font-family:var(--font-serif);
+  font-size:34px; font-weight:700;
+  color:var(--accent); line-height:1; margin-bottom:3px;
+}
+.s-desc { font-size:11px; font-weight:300; color:var(--off); }
+
+.avail {
+  display:flex; align-items:center; gap:8px;
+  font-size:11px; color:var(--green);
+}
+.avail-dot {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--green); flex-shrink:0;
+  animation:blink 2.2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* Form */
+.contact-form-area {
+  padding:56px 0 56px 60px;
+}
+.form-intro { margin-bottom:44px; }
+.form-intro h2 {
+  font-family:var(--font-serif);
+  font-size:26px; font-weight:400; font-style:italic;
+  color:var(--white); margin-bottom:10px;
+}
+.form-intro p {
+  font-size:13px; font-weight:300;
+  color:var(--off2); line-height:1.8; max-width:520px;
+}
+
+.form-grid { border:1px solid var(--border); }
+
+.f-row {
+  display:grid; grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--border);
+}
+.f-row:last-of-type { border-bottom:none; }
+.f-row.f-single { grid-template-columns:1fr; }
+
+.f-field {
+  padding:24px 28px;
+  border-right:1px solid var(--border);
+  transition:background 0.2s;
+}
+.f-field:last-child, .f-field.no-right { border-right:none; }
+.f-field:focus-within { background:rgba(232,213,163,0.025); }
+.f-field:focus-within .f-label { color:var(--accent); }
+
+.f-label {
+  display:block;
+  font-size:9px; font-weight:500;
+  letter-spacing:0.24em; text-transform:uppercase;
+  color:var(--off); margin-bottom:10px;
+  transition:color 0.2s;
+}
+.f-req { color:var(--accent2); margin-left:2px; }
+
+.f-field input,
+.f-field textarea {
+  width:100%; background:transparent;
+  border:none; outline:none;
+  font-family:var(--font-sans);
+  font-size:15px; font-weight:300;
+  color:var(--white); line-height:1.5;
+}
+.f-field input::placeholder,
+.f-field textarea::placeholder {
+  color:rgba(120,114,106,0.5); font-style:italic;
+}
+.f-field textarea { resize:none; height:130px; display:block; }
+
+.f-submit-row {
+  border-top:1px solid var(--border);
+  display:flex; align-items:center;
+  justify-content:space-between; padding:24px 28px; gap:16px;
+}
+
+.btn-submit-form {
+  display:flex; align-items:center; gap:16px;
+  background:none; border:none; cursor:pointer; padding:0;
+  font-family:var(--font-sans);
+}
+.btn-submit-label {
+  font-family:var(--font-serif);
+  font-size:21px; font-weight:700; font-style:italic;
+  color:var(--white); transition:color 0.22s;
+}
+.btn-submit-form:hover .btn-submit-label { color:var(--accent); }
+
+.btn-submit-circle {
+  width:46px; height:46px;
+  border:1px solid var(--border-md); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:17px; color:var(--accent);
+  transition:background 0.25s, color 0.25s, transform 0.3s, border-color 0.25s;
+  flex-shrink:0;
+}
+.btn-submit-form:hover .btn-submit-circle {
+  background:var(--accent); color:var(--bg);
+  border-color:var(--accent); transform:rotate(45deg);
+}
+
+.submit-note {
+  font-size:11px; font-weight:300;
+  color:var(--off); font-style:italic;
+}
+
+/* Success */
+.form-success {
+  display:none; padding:72px 0; text-align:center;
+}
+.form-success.show { display:block; animation:up 0.6s ease forwards; }
+.success-mark {
+  font-family:var(--font-serif);
+  font-size:64px; font-weight:900;
+  -webkit-text-stroke:1.5px var(--accent);
+  color:transparent; line-height:1; margin-bottom:20px; opacity:0.5;
+}
+.form-success h3 {
+  font-family:var(--font-serif);
+  font-size:36px; font-weight:400; font-style:italic;
+  color:var(--white); margin-bottom:10px;
+}
+.form-success p { font-size:13px; font-weight:300; color:var(--off2); }
+
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+.site-footer {
+  border-top:1px solid var(--border);
+  padding:28px 0;
+}
+.footer-inner {
+  max-width:var(--max); margin:0 auto; padding:0 var(--pad);
+  display:flex; align-items:center;
+  justify-content:space-between; gap:20px;
+  flex-wrap:wrap;
+}
+.footer-links {
+  display:flex; gap:32px; flex-wrap:wrap;
+}
+.footer-links a {
+  font-size:11px; font-weight:300; color:var(--off);
+  text-decoration:none; transition:color 0.2s;
+}
+.footer-links a:hover { color:var(--accent); }
+.footer-links span { font-size:11px; font-weight:300; color:var(--off); }
+.footer-copy { font-size:10px; font-weight:300; color:rgba(120,114,106,0.4); }
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET (≤1024px)
+───────────────────────────────────────── */
+@media (max-width:1024px) {
+  :root { --pad:32px; }
+
+  .hero-grid { grid-template-columns:1fr 280px; }
+  .home-intro { gap:48px; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .service-card:nth-child(3n) { border-right:1px solid var(--border); }
+  .service-card:nth-child(2n) { border-right:none; }
+  .service-card:nth-last-child(-n+3) { border-bottom:1px solid var(--border); }
+  .service-card:nth-last-child(-n+2) { border-bottom:none; }
+  .awards-grid { grid-template-columns:repeat(2,1fr); }
+  .award-item:nth-child(2) { border-right:none; }
+  .award-item:nth-child(3) { border-top:1px solid var(--border); }
+  .award-item:nth-child(4) { border-top:1px solid var(--border); border-right:none; }
+  .about-hero { grid-template-columns:1fr 260px; gap:40px; }
+  .about-body { grid-template-columns:1fr 260px; gap:48px; }
+  .contact-body { grid-template-columns:260px 1fr; }
+  .contact-form-area { padding-left:40px; }
+  .quotes-grid { grid-template-columns:1fr 1fr; }
+  .quote-card:last-child { display:none; }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (≤768px)
+───────────────────────────────────────── */
+@media (max-width:768px) {
+  :root { --pad:20px; }
+
+  /* Nav */
+  .nav-links, .nav-cta { display:none; }
+  .nav-burger { display:flex; }
+
+  /* Hero */
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-title { font-size:clamp(48px,13vw,72px); }
+  .hero-right { order:-1; }
+  .hero-right p { font-size:13px; max-width:100%; }
+
+  /* Logos */
+  .logos-strip { flex-direction:column; align-items:flex-start; gap:20px; }
+  .logos-label { border-right:none; padding-right:0; }
+  .logos-list { padding-left:0; gap:24px; }
+
+  /* Home intro */
+  .home-intro { grid-template-columns:1fr; gap:40px; }
+
+  /* Services */
+  .services-grid { grid-template-columns:1fr; }
+  .service-card { border-right:none !important; }
+  .service-card:nth-last-child(-n+1) { border-bottom:none; }
+  .services-header { flex-direction:column; align-items:flex-start; gap:20px; }
+
+  /* Awards */
+  .awards-grid { grid-template-columns:1fr; }
+  .award-item { border-right:none !important; border-top:1px solid var(--border); }
+  .award-item:first-child { border-top:none; }
+
+  /* CTA band */
+  .home-cta-band { grid-template-columns:1fr; }
+
+  /* Services page */
+  .service-full-item { grid-template-columns:1fr; gap:28px; }
+  .sfi-left { padding-right:0; }
+  .sfi-right ul { grid-template-columns:1fr; }
+  .how-grid { grid-template-columns:1fr; }
+  .how-col { border-right:none !important; border-bottom:1px solid var(--border); }
+  .how-col:last-child { border-bottom:none; }
+
+  /* About page */
+  .about-hero { grid-template-columns:1fr; gap:28px; }
+  .about-body { grid-template-columns:1fr; gap:48px; }
+  .about-sidebar { position:static; }
+  .timeline-item { grid-template-columns:1fr; gap:8px; }
+  .quotes-grid { grid-template-columns:1fr; }
+  .quote-card:last-child { display:block; }
+
+  /* Contact page */
+  .contact-hero { grid-template-columns:1fr; gap:28px; }
+  .contact-body { grid-template-columns:1fr; }
+  .contact-sidebar {
+    border-right:none; border-bottom:1px solid var(--border);
+    padding:40px 0;
+  }
+  .contact-form-area { padding:40px 0; }
+  .f-row { grid-template-columns:1fr; }
+  .f-field { border-right:none !important; }
+  .f-submit-row { flex-direction:column; align-items:flex-start; gap:14px; }
+
+  /* Footer */
+  .footer-inner { flex-direction:column; align-items:flex-start; gap:16px; }
+  .footer-links { gap:20px; }
+}
+
+@media (max-width:480px) {
+  .hero-right-actions { flex-direction:column; }
+  .btn-primary, .btn-secondary { text-align:center; }
+  .logos-list { gap:16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom cursor (desktop) -->
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-ring" id="curRing" aria-hidden="true"></div>
+
+<!-- ═══ NAV ═══ -->
+<header>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="showPage('home',this)" aria-label="Morgan Jones Consulting home">
+        Morgan Jones <em>Consulting</em>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a onclick="showPage('home',this)">Home</a></li>
+        <li><a onclick="showPage('services',this)">Services</a></li>
+        <li><a onclick="showPage('about',this)">About</a></li>
+        <li><a onclick="showPage('contact',this)" class="active">Contact</a></li>
+      </ul>
+      <a onclick="showPage('contact',this)" class="nav-cta" role="button" tabindex="0">Get in Touch</a>
+      <button class="nav-burger" id="burger" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleBurger()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu" role="menu">
+      <a onclick="showPage('home',this);closeBurger()" role="menuitem">Home</a>
+      <a onclick="showPage('services',this);closeBurger()" role="menuitem">Services</a>
+      <a onclick="showPage('about',this);closeBurger()" role="menuitem">About</a>
+      <a onclick="showPage('contact',this);closeBurger()" class="nav-mobile-cta" role="menuitem">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<div class="page active" id="page-home">
+  <div class="wrap">
+
+    <!-- Hero -->
+    <section class="home-hero" aria-labelledby="home-h1">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow anim anim-d1">Podcast &amp; Creator Portfolio Strategy</div>
+          <h1 class="hero-title anim anim-d2" id="home-h1">
+            What to<br>
+            <span class="it">make,</span><br>
+            <span class="ghost">who to back.</span>
+          </h1>
+        </div>
+        <div class="hero-right anim anim-d3">
+          <p>I help podcast networks, platforms, and creators decide what to make, who to back, and how to launch — then install the operating system that makes those decisions repeatable.</p>
+          <div class="hero-right-actions">
+            <a onclick="showPage('services',this)" class="btn-primary" role="button">View Services</a>
+            <a onclick="showPage('contact',this)" class="btn-secondary" role="button">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <div class="logos-strip anim anim-d4" aria-label="Previous employers">
+      <span class="logos-label">Experience at</span>
+      <div class="logos-list">
+        <span class="logo-item"><em>Wondery</em> / Amazon</span>
+        <span class="logo-item">Amazon Music</span>
+        <span class="logo-item">Audible</span>
+        <span class="logo-item">ESPN / ABC Sports</span>
+        <span class="logo-item">SportsNet NY</span>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="home-intro" aria-labelledby="intro-h2">
+      <div class="intro-left anim anim-d2">
+        <div class="section-label">What I do</div>
+        <h2 id="intro-h2">Senior judgment when it matters most.</h2>
+        <p>With 10+ years leading award-winning podcast slates at scale, I work with companies and independent creators at moments where clarity and structure matter more than hustle. I'm not a production vendor — I'm a strategic thought partner.</p>
+        <p>I've built and run slates of 40+ shows, managed multi-million-dollar content portfolios, and executive produced work that's earned Podcast of the Year, a Pulitzer Prize finalist nomination, and Apple's first-ever "Series Essential" designation.</p>
+        <a onclick="showPage('about',this)" class="btn-secondary" style="margin-top:12px" role="button">Read my background →</a>
+      </div>
+      <div class="intro-right anim anim-d3">
+        <div class="section-label">Why clients work with me</div>
+        <ul class="credential-list">
+          <li><span class="cred-num">01</span><span class="cred-text"><strong>Strategy and execution, both.</strong> My primary strength is senior judgment and strategic clarity — and I have the hands-on EP and show-running experience to step in and lead when that's what the moment requires.</span></li>
+          <li><span class="cred-num">02</span><span class="cred-text"><strong>Clear scope, defined outcomes.</strong> Every engagement starts with a tight brief and ends with actionable recommendations.</span></li>
+          <li><span class="cred-num">03</span><span class="cred-text"><strong>Focused where it counts.</strong> Every engagement is scoped around your highest-leverage decisions — the kind that compound over time and shape everything downstream.</span></li>
+          <li><span class="cred-num">04</span><span class="cred-text"><strong>Pattern recognition at scale.</strong> 40+ shows managed simultaneously means I've seen nearly every failure mode — and most of the wins.</span></li>
+          <li><span class="cred-num">05</span><span class="cred-text"><strong>Earns trust fast.</strong> Peers describe my approach as precision, follow-through, and an ability to unstick blockers quickly.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="home-services" aria-labelledby="services-h2">
+      <div class="services-header">
+        <div>
+          <div class="section-label anim">Core Services</div>
+          <h2 class="anim anim-d1" id="services-h2">Six ways<br>I can <em>help.</em></h2>
+        </div>
+        <a onclick="showPage('services',this)" class="btn-secondary anim anim-d2" role="button">Full service detail →</a>
+      </div>
+      <div class="services-grid">
+        <article class="service-card anim anim-d1">
+          <div class="service-num">01</div>
+          <h3>Portfolio &amp; Slate Strategy</h3>
+          <p>Strategic evaluation of an existing podcast slate to clarify priorities, tradeoffs, and investment decisions.</p>
+          <span class="service-tag">Networks &amp; Platforms</span>
+        </article>
+        <article class="service-card anim anim-d2">
+          <div class="service-num">02</div>
+          <h3>Show Pitching &amp; Creative Development</h3>
+          <p>High-level creative evaluation and pitch refinement at the decision-making level.</p>
+          <span class="service-tag">Creators &amp; Producers</span>
+        </article>
+        <article class="service-card anim anim-d3">
+          <div class="service-num">03</div>
+          <h3>Talent &amp; Market Scouting</h3>
+          <p>Independent evaluation of the podcast landscape to identify acquisition, partnership, or expansion opportunities.</p>
+          <span class="service-tag">Networks &amp; Platforms</span>
+        </article>
+        <article class="service-card anim anim-d1">
+          <div class="service-num">04</div>
+          <h3>Go-To-Market &amp; Distribution</h3>
+          <p>Strategic design of how a show enters the market and how success is defined from day one.</p>
+          <span class="service-tag">All clients</span>
+        </article>
+        <article class="service-card anim anim-d2">
+          <div class="service-num">05</div>
+          <h3>Creator &amp; Show Checkup</h3>
+          <p>A structured, senior-level audit diagnosing what's working, what's holding a show back, and what to do next.</p>
+          <span class="service-tag">Independent Creators</span>
+        </article>
+        <article class="service-card anim anim-d3">
+          <div class="service-num">06</div>
+          <h3>Interim / "Hired Gun" Leadership</h3>
+          <p>Embedded strategic leadership during moments of transition, reset, or rapid build.</p>
+          <span class="service-tag">Organizations</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section class="home-awards" aria-labelledby="awards-h2">
+      <div class="section-label anim">Recognition</div>
+      <h2 class="anim anim-d1" id="awards-h2" style="font-size:clamp(28px,3vw,38px);font-weight:900;margin-top:12px;margin-bottom:0;">Selected awards &amp; credits.</h2>
+      <div class="awards-grid">
+        <div class="award-item anim anim-d1">
+          <div class="award-show">Hysterical</div>
+          <div class="award-title">Podcast of the Year</div>
+          <div class="award-org">Apple, Time, Vulture — 2025</div>
+        </div>
+        <div class="award-item anim anim-d2">
+          <div class="award-show">Hysterical</div>
+          <div class="award-title">Pulitzer Prize Finalist — Audio Reporting</div>
+          <div class="award-org">The Pulitzer Board — 2025</div>
+        </div>
+        <div class="award-item anim anim-d3">
+          <div class="award-show">9/12</div>
+          <div class="award-title">Podcast of the Year</div>
+          <div class="award-org">The Ambies — 2022</div>
+        </div>
+        <div class="award-item anim anim-d4">
+          <div class="award-show">Ghost Story</div>
+          <div class="award-title">Best Documentary + Apple Series Essential</div>
+          <div class="award-org">The Ambies — 2024</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="home-cta-band" aria-labelledby="cta-h2">
+      <div class="anim anim-d1">
+        <h2 id="cta-h2">Ready to make <strong>better content decisions?</strong></h2>
+      </div>
+      <div class="anim anim-d2" style="display:flex;gap:14px;flex-wrap:wrap;flex-shrink:0;">
+        <a onclick="showPage('contact',this)" class="btn-primary" role="button">Start a conversation</a>
+        <a onclick="showPage('services',this)" class="btn-secondary" role="button">See services</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+<!-- ═══ PAGE: SERVICES ═══ -->
+<div class="page" id="page-services">
+  <div class="wrap">
+
+    <section class="services-hero" aria-labelledby="svc-h1">
+      <div class="eyebrow anim">Services</div>
+      <h1 class="anim anim-d1" id="svc-h1">
+        What I <em>do</em><br>and how it works.
+      </h1>
+      <p class="services-hero-sub anim anim-d2">I advise podcast networks, platforms, and creators on high-stakes content decisions — bringing clarity, structure, and senior judgment when it matters most. Every engagement is scoped, finite, and focused on real decisions.</p>
+    </section>
+
+    <div class="services-full">
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">01</div>
+          <h3>Portfolio &amp; Slate Strategy</h3>
+          <span class="sfi-tag">Networks &amp; Platforms</span>
+        </div>
+        <div class="sfi-right">
+          <p>Strategic evaluation of an existing podcast or content slate to clarify priorities, tradeoffs, and investment decisions. The goal is a sharper, more intentional portfolio — one where every show has a clear role.</p>
+          <ul>
+            <li>Full slate diagnosis — what's working, stalled, or misaligned</li>
+            <li>Clear role definition for each show (subscriptions, ads, brand, IP, talent)</li>
+            <li>Renewal, pause, sunset, or reframe recommendations</li>
+            <li>6–12 month portfolio roadmap</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Networks, platforms, or studios needing sharper focus and better outcomes from existing content.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">02</div>
+          <h3>Show Pitching &amp; Creative Development</h3>
+          <span class="sfi-tag">Creators &amp; Producers</span>
+        </div>
+        <div class="sfi-right">
+          <p>High-level creative evaluation and pitch refinement at the decision-making level. I help strong ideas become greenlight-ready — with the discipline and market awareness that gets them bought.</p>
+          <ul>
+            <li>Pitch teardown and rebuild</li>
+            <li>Format and franchise architecture</li>
+            <li>Host and talent fit assessment</li>
+            <li>Greenlight readiness and risk analysis</li>
+            <li>Platform- or buyer-specific positioning</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Creators, producers, or companies with strong ideas that need clarity, discipline, and market alignment.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">03</div>
+          <h3>Talent &amp; Market Scouting</h3>
+          <span class="sfi-tag">Networks &amp; Platforms</span>
+        </div>
+        <div class="sfi-right">
+          <p>Independent evaluation of the podcast and creator landscape to identify acquisition, partnership, or expansion opportunities — without the guesswork.</p>
+          <ul>
+            <li>Scouting existing shows and emerging talent</li>
+            <li>Buy vs. build vs. partner recommendations</li>
+            <li>Risk and scalability assessment</li>
+            <li>Franchise and integration potential analysis</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Networks or platforms looking to expand their slate intelligently.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">04</div>
+          <h3>Go-To-Market &amp; Distribution Strategy</h3>
+          <span class="sfi-tag">All clients</span>
+        </div>
+        <div class="sfi-right">
+          <p>Strategic design of how a show enters the market and how success is defined. Launching without a distribution strategy is the most common — and most expensive — mistake in podcasting.</p>
+          <ul>
+            <li>Launch and windowing strategy</li>
+            <li>Feed, paywall, and platform approach</li>
+            <li>Subscription vs. ad tradeoff analysis</li>
+            <li>KPI definition tied to real decisions</li>
+            <li>Post-launch optimization framework</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Teams launching premium content or recalibrating underperforming releases.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">05</div>
+          <h3>Creator &amp; Show Checkup</h3>
+          <span class="sfi-tag">Independent Creators</span>
+        </div>
+        <div class="sfi-right">
+          <p>A structured, senior-level audit designed to diagnose what's working, what's holding a show back, and what to do next. This is not ongoing coaching — it's a clear-eyed product and strategy assessment.</p>
+          <ul>
+            <li>Review of recent episodes and format</li>
+            <li>Positioning and audience clarity assessment</li>
+            <li>Host performance and structural notes</li>
+            <li>Distribution and growth levers</li>
+            <li>Monetization readiness (ads, subs, brand, IP)</li>
+            <li>Written recommendations and prioritized next steps</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Independent creators, journalists, or teams who want expert judgment without a long-term commitment.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-full-item anim">
+        <div class="sfi-left">
+          <div class="sfi-num">06</div>
+          <h3>Interim / "Hired Gun" Leadership</h3>
+          <span class="sfi-tag">Organizations</span>
+        </div>
+        <div class="sfi-right">
+          <p>Embedded strategic leadership during moments of transition, reset, or rapid build. I step in as acting head of content or strategy, deliver real work, then hand off cleanly.</p>
+          <ul>
+            <li>Acting head of content or strategy support</li>
+            <li>Slate or team realignment</li>
+            <li>Executive-level decision support</li>
+            <li>Systems, frameworks, and process installation</li>
+            <li>Clean handoff after engagement ends</li>
+          </ul>
+          <div class="best-for">
+            <div class="best-for-label">Best for</div>
+            <p>Organizations needing senior judgment without a permanent hire.</p>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /services-full -->
+
+    <!-- How I work -->
+    <div class="how-grid anim" style="grid-template-columns:1fr;">
+      <div class="how-col" style="border-right:none;">
+        <div class="section-label">How I work</div>
+        <h3>What to expect.</h3>
+        <ul>
+          <li>Senior-level, hands-on strategic partner</li>
+          <li>Clear scopes and defined outcomes</li>
+          <li>Short-term projects or monthly retainers</li>
+          <li>Strategy, creative development, and decision-making — with the ability to step into EP or show-running roles when needed</li>
+          <li>Typical engagements: 2–12 weeks or monthly advisory</li>
+          <li>Interim leadership: 3–6 month engagements</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="home-cta-band anim" style="padding-top:64px">
+      <div>
+        <h2>Not sure which service fits?<strong>Let's figure it out together.</strong></h2>
+      </div>
+      <a onclick="showPage('contact',this)" class="btn-primary" role="button">Start a conversation</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ PAGE: ABOUT ═══ -->
+<div class="page" id="page-about">
+  <div class="wrap">
+
+    <section class="about-hero" aria-labelledby="about-h1">
+      <div>
+        <div class="eyebrow anim">About</div>
+        <h1 class="anim anim-d1" id="about-h1">
+          Morgan<br><em>Jones.</em>
+        </h1>
+      </div>
+      <div class="about-hero-right anim anim-d2">
+        <p>Award-winning podcast executive with 15+ years at the intersection of creative judgment and commercial strategy. Former Head of US Originals at Wondery/Amazon.</p>
+      </div>
+    </section>
+
+    <div class="about-body">
+      <div class="about-main anim anim-d2">
+        <p><strong>I spent the better part of 15 years inside some of the most consequential podcast organizations ever built</strong> — Audible, Amazon Music, and Wondery — learning what it actually takes to build a slate, develop a show, and make decisions that hold up under pressure.</p>
+
+        <p>At Wondery, I built and led the Commissioned Originals team, running a slate of 25–30 shows at a time across every genre while managing a team of 10+ producers and maintaining relationships with 30+ external studios and creators. The work ranged from <em>Ghost Story</em> (Ambies Best Documentary, Apple's first Series Essential, 5M series downloads) to <em>Hysterical</em> (Apple and Time Podcast of the Year 2025, Pulitzer Prize finalist) to complex international co-productions and global launches in four markets.</p>
+
+        <blockquote><p>"He earns trust fast, unsticks blockers, and gets teams rowing in the same direction."</p></blockquote>
+
+        <p>In 2024, I became Head of US Originals Strategy &amp; Programming — overseeing the full lifecycle of Wondery's US slate, leading greenlight processes, owning MBR/QBR reporting for senior leadership, and co-authoring strategic documents for Amazon's S-Team. Simultaneously, I led international content across the UK, Germany, Mexico, and Brazil.</p>
+
+        <p><strong>Now I bring that experience to organizations and creators who need senior-level judgment without a full-time hire.</strong> Whether that means a slate review, a pitch teardown, a launch strategy, or acting as an embedded thought partner during a critical window — I work at the decision layer, with clear scope and defined outcomes.</p>
+
+        <p>I'm based in San Francisco and work with clients remotely and in person.</p>
+      </div>
+
+      <div class="about-sidebar anim anim-d3">
+        <div class="sidebar-box">
+          <div class="sidebar-box-label">At a glance</div>
+          <ul>
+            <li><strong>15+ years</strong> in podcasting &amp; audio</li>
+            <li><strong>Wondery, Amazon Music, Audible</strong></li>
+            <li><strong>2×</strong> Podcast of the Year (EP)</li>
+            <li><strong>Pulitzer Prize</strong> finalist (Audio)</li>
+            <li><strong>40+</strong> shows managed simultaneously</li>
+            <li><strong>4 international markets</strong> led</li>
+            <li>Based in <strong>San Francisco, CA</strong></li>
+          </ul>
+        </div>
+        <div class="sidebar-box">
+          <div class="sidebar-box-label">Education</div>
+          <ul>
+            <li><strong>BA, English</strong> — Middlebury College</li>
+          </ul>
+        </div>
+        <div class="sidebar-box">
+          <div class="sidebar-box-label">Connect</div>
+          <ul>
+            <li><a href="/cdn-cgi/l/email-protection#432e2c3124222d292c2d2630717603242e222a2f6d202c2e" style="color:var(--accent);text-decoration:none"><span class="__cf_email__" data-cfemail="f5989a8792949b9f9a9b9086c7c0b59298949c99db969a98">[email&#160;protected]</span></a></li>
+            <li><a href="https://linkedin.com/in/morganljones" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">LinkedIn</a></li>
+            <li>917-991-6908</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <section class="timeline" aria-labelledby="timeline-h2">
+      <div class="section-label anim">Experience</div>
+      <h2 class="anim anim-d1" id="timeline-h2">Where I've <em>been.</em></h2>
+      <ul class="timeline-list">
+        <li class="timeline-item anim">
+          <div class="tl-dates">2024 – 2025</div>
+          <div>
+            <div class="tl-company">Wondery / Amazon</div>
+            <div class="tl-role">Head of US Originals Strategy &amp; Programming + Acting Head of International Content</div>
+            <div class="tl-desc">Led end-to-end slate planning, greenlight approvals, and distribution strategy for Wondery's US Originals. Simultaneously directed content strategy across UK, Germany, Mexico, and Brazil. Co-authored "Beyond the Download" for Amazon S-Team. EP credits include <em>Hysterical</em> (Podcast of the Year) and <em>Empire City</em>.</div>
+          </div>
+        </li>
+        <li class="timeline-item anim">
+          <div class="tl-dates">2022 – 2024</div>
+          <div>
+            <div class="tl-company">Wondery / Amazon</div>
+            <div class="tl-role">Head of Commissioned Originals</div>
+            <div class="tl-desc">Built and led a team of 10 managing 25–30 shows across all genres. EP credits include <em>Ghost Story</em>, <em>Hysterical</em>, <em>9/12</em>, <em>Think Twice: Michael Jackson</em>, <em>Class of '88</em>, <em>The Big Flop</em>, and more. Codified greenlight frameworks and launch playbooks that became company standards.</div>
+          </div>
+        </li>
+        <li class="timeline-item anim">
+          <div class="tl-dates">2020 – 2022</div>
+          <div>
+            <div class="tl-company">Amazon Music</div>
+            <div class="tl-role">Head of Amazon Original &amp; Exclusive Podcasts</div>
+            <div class="tl-desc">First content hire for Amazon Music's podcast initiative. Built the partnerships, programming, and operations team from scratch. Onboarded hundreds of thousands of shows and managed prominent network relationships at launch.</div>
+          </div>
+        </li>
+        <li class="timeline-item anim">
+          <div class="tl-dates">2014 – 2020</div>
+          <div>
+            <div class="tl-company">Audible / Amazon</div>
+            <div class="tl-role">Executive Producer, Audible Original Programming</div>
+            <div class="tl-desc">Managed a multi-million-dollar slate of scripted and unscripted audio. Negotiated talent deals with Billy Crystal, Annette Bening, Jon Hamm, Adam Scott, and many others. Multiple award-winning credits including Kids Audiobook of the Year 2018 &amp; 2019.</div>
+          </div>
+        </li>
+        <li class="timeline-item anim">
+          <div class="tl-dates">2011 – 2014</div>
+          <div>
+            <div class="tl-company">Rooftop Comedy</div>
+            <div class="tl-role">Director, Programming &amp; Development</div>
+            <div class="tl-desc">Content executive for digital media startup (acquired by Audible). Developed original video and audio programs for Microsoft, TBS, IFC, and Scripps.</div>
+          </div>
+        </li>
+        <li class="timeline-item anim">
+          <div class="tl-dates">Early career</div>
+          <div>
+            <div class="tl-company">ESPN / ABC Sports / SportsNet NY</div>
+            <div class="tl-role">Production roles</div>
+            <div class="tl-desc">Early-career experience in sports broadcast production at some of the most recognized names in the industry.</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Peer quotes -->
+    <section class="quotes-section" aria-labelledby="quotes-h2">
+      <div class="section-label anim">What colleagues say</div>
+      <h2 class="anim anim-d1" id="quotes-h2">Heard from the people who've worked with me.</h2>
+      <div class="quotes-grid">
+        <div class="quote-card anim anim-d1">
+          <p class="quote-text">Earns trust fast. He has incredible organizational skills, a handle on all details, and is very thoughtful about how to organize and prioritize before taking on a task.</p>
+          <div class="quote-attr">Manager, Wondery</div>
+        </div>
+        <div class="quote-card anim anim-d2">
+          <p class="quote-text">Morgan's superpower is his precision and unwavering focus. He dives deep into strategy and details to ensure the best experience for consumers, while building mechanisms to increase efficiencies.</p>
+          <div class="quote-attr">Peer, Wondery</div>
+        </div>
+        <div class="quote-card anim anim-d3">
+          <p class="quote-text">He is able to highlight work processes we should be aware of with great foresight. Morgan takes on tasks that some of us don't even know exist — and remediate them before they become problems.</p>
+          <div class="quote-attr">Peer, Wondery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="home-cta-band anim" style="padding-top:0;border-top:1px solid var(--border)">
+      <div>
+        <h2>Want to work together?<strong>Let's have a conversation.</strong></h2>
+      </div>
+      <a onclick="showPage('contact',this)" class="btn-primary" role="button">Get in touch</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══ PAGE: CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <div class="wrap">
+
+    <section class="contact-hero" aria-labelledby="contact-h1">
+      <div>
+        <div class="eyebrow anim">New Inquiries</div>
+        <h1 class="anim anim-d1" id="contact-h1">
+          Let's<br>
+          <span class="it">work</span><br>
+          <span class="ghost">together.</span>
+        </h1>
+      </div>
+      <div class="contact-hero-right anim anim-d2">
+        <p>I work with podcast networks, platforms, and creators at moments where judgment, clarity, and structure matter more than hustle.</p>
+      </div>
+    </section>
+
+    <div class="contact-body">
+
+      <!-- Sidebar -->
+      <aside class="contact-sidebar" aria-label="Service and contact info">
+
+        <div class="cs-block anim anim-d1">
+          <div class="section-label">Services</div>
+          <ul class="cs-list">
+            <li>Portfolio &amp; Slate Strategy</li>
+            <li>Show Pitching &amp; Development</li>
+            <li>Talent &amp; Market Scouting</li>
+            <li>Go-To-Market Strategy</li>
+            <li>Creator &amp; Show Checkups</li>
+            <li>Interim Leadership</li>
+          </ul>
+        </div>
+
+        <div class="cs-block anim anim-d2">
+          <div class="section-label">By the numbers</div>
+          <div class="stat-stack">
+            <div><div class="s-num">15+</div><div class="s-desc">Years in audio &amp; podcasting</div></div>
+            <div><div class="s-num">2×</div><div class="s-desc">Podcast of the Year</div></div>
+            <div><div class="s-num">40+</div><div class="s-desc">Shows managed simultaneously</div></div>
+          </div>
+        </div>
+
+        <div class="cs-block anim anim-d3">
+          <div class="section-label">Availability</div>
+          <div class="avail"><div class="avail-dot"></div>Taking clients — March 2026</div>
+        </div>
+
+      </aside>
+
+      <!-- Form -->
+      <div class="contact-form-area">
+
+        <div class="form-intro anim anim-d2">
+          <h2>Tell me what you're working on.</h2>
+          <p>Share your name, email, and a brief description of what you need — a slate review, a show checkup, a launch, or just an initial conversation. I'll follow up within 48 hours.</p>
+        </div>
+
+        <div id="formWrap" class="anim anim-d3">
+          <div class="form-grid">
+
+            <div class="f-row">
+              <div class="f-field">
+                <label class="f-label" for="f-fn">First Name <span class="f-req">*</span></label>
+                <input type="text" id="f-fn" placeholder="First" autocomplete="given-name" required>
+              </div>
+              <div class="f-field">
+                <label class="f-label" for="f-ln">Last Name <span class="f-req">*</span></label>
+                <input type="text" id="f-ln" placeholder="Last" autocomplete="family-name" required>
+              </div>
+            </div>
+
+            <div class="f-row">
+              <div class="f-field">
+                <label class="f-label" for="f-em">Email <span class="f-req">*</span></label>
+                <input type="email" id="f-em" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="f-field">
+                <label class="f-label" for="f-co">Company or Show</label>
+                <input type="text" id="f-co" placeholder="Where are you coming from?" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="f-row f-single">
+              <div class="f-field no-right">
+                <label class="f-label" for="f-msg">Message <span class="f-req">*</span></label>
+                <textarea id="f-msg" placeholder="What are you working on, and what kind of support are you looking for?" required></textarea>
+              </div>
+            </div>
+
+            <div class="f-submit-row">
+              <button type="button" class="btn-submit-form" onclick="handleSubmit()" aria-label="Send message">
+                <span class="btn-submit-label">Send message</span>
+                <span class="btn-submit-circle" aria-hidden="true">→</span>
+              </button>
+              <span class="submit-note">Typically responds within 48 hours</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+          <div class="success-mark" aria-hidden="true">✓</div>
+          <h3>Message received.</h3>
+          <p>I'll be in touch within 48 hours. Talk soon.</p>
+        </div>
+
+      </div><!-- /form-area -->
+
+    </div><!-- /contact-body -->
+
+  </div>
+</div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/cdn-cgi/l/email-protection#bfd2d0cdd8ded1d5d0d1dacc8d8affd8d2ded6d391dcd0d2"><span class="__cf_email__" data-cfemail="ddb0b2afbabcb3b7b2b3b8aeefe89dbab0bcb4b1f3beb2b0">[email&#160;protected]</span></a>
+      <a href="tel:9179916908">917-991-6908</a>
+      <a href="https://linkedin.com/in/morganljones" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.morganjonesadvisory.com" target="_blank" rel="noopener noreferrer">morganjonesadvisory.com</a>
+      <span>San Francisco, CA</span>
+    </nav>
+    <div class="footer-copy">© 2026 Morgan Jones Consulting</div>
+  </div>
+</footer>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ─── SPA routing ───────────────────────────────────
+function showPage(id, triggerEl) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show target
+  const target = document.getElementById('page-' + id);
+  if (target) target.classList.add('active');
+
+  // Update nav active states
+  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => a.classList.remove('active'));
+  if (triggerEl) {
+    // Highlight matching nav link
+    document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
+      if (a.getAttribute('onclick') && a.getAttribute('onclick').includes("'" + id + "'")) {
+        a.classList.add('active');
+      }
+    });
+  }
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Reset contact form if navigating to contact
+  if (id === 'contact') {
+    const wrap = document.getElementById('formWrap');
+    const success = document.getElementById('formSuccess');
+    if (wrap) { wrap.style.display = ''; wrap.style.opacity = ''; wrap.style.transform = ''; }
+    if (success) success.classList.remove('show');
+  }
+
+  // Trigger animations
+  setTimeout(runAnimations, 60);
+
+  // Update page title for SEO / accessibility
+  const titles = {
+    home: 'Morgan Jones Consulting — Podcast & Creator Portfolio Strategy',
+    services: 'Services — Morgan Jones Consulting',
+    about: 'About — Morgan Jones Consulting',
+    contact: 'Contact — Morgan Jones Consulting'
+  };
+  document.title = titles[id] || titles.home;
+}
+
+// ─── Intersection Observer for animations ──────────
+function runAnimations() {
+  const elems = document.querySelectorAll('.page.active .anim:not(.in)');
+
+  // Safari/fallback: if IntersectionObserver not reliable, just show all
+  if (!('IntersectionObserver' in window)) {
+    elems.forEach(el => el.classList.add('in'));
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
+
+  elems.forEach(el => obs.observe(el));
+
+  // Safari safety net: after 800ms force-show anything still hidden
+  setTimeout(() => {
+    document.querySelectorAll('.page.active .anim:not(.in)').forEach(el => {
+      el.classList.add('in');
+    });
+  }, 800);
+}
+
+// ─── Mobile burger ──────────────────────────────────
+function toggleBurger() {
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+}
+function closeBurger() {
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('burger').setAttribute('aria-expanded', 'false');
+}
+
+// ─── Contact form submit ────────────────────────────
+function handleSubmit() {
+  const fn  = document.getElementById('f-fn').value.trim();
+  const em  = document.getElementById('f-em').value.trim();
+  const msg = document.getElementById('f-msg').value.trim();
+
+  if (!fn || !em || !msg) {
+    [['f-fn', fn], ['f-em', em], ['f-msg', msg]].forEach(([id, val]) => {
+      if (!val) {
+        const el = document.getElementById(id);
+        el.closest('.f-field').style.background = 'rgba(201,75,58,0.06)';
+        setTimeout(() => el.closest('.f-field').style.background = '', 1600);
+        if (!fn) el.focus();
+      }
+    });
+    return;
+  }
+
+  const wrap = document.getElementById('formWrap');
+  wrap.style.transition = 'opacity 0.35s, transform 0.35s';
+  wrap.style.opacity = '0';
+  wrap.style.transform = 'translateY(-12px)';
+  setTimeout(() => {
+    wrap.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  }, 360);
+}
+
+// ─── Custom cursor (desktop only) ──────────────────
+if (window.matchMedia('(hover: hover)').matches) {
+  const cur = document.getElementById('cur');
+  const ring = document.getElementById('curRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px'; cur.style
